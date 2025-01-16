@@ -17,4 +17,7 @@ public class Professor {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    public Professor() {
+        
+    }
 }
