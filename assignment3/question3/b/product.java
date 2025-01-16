@@ -13,4 +13,8 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     private List<Order> orders = new ArrayList<>();
 
+    public Product() {
+        
+    }
+
 }
