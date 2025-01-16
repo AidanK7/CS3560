@@ -2,6 +2,7 @@ public class MainCreateOrder {
 
     public static void main(String[] args) {
         // Omit session connection 
+        session.beginTransaction();
       
         Order order = new Order();
         order.setDate(new Date());
@@ -14,6 +15,11 @@ public class MainCreateOrder {
         order.getProducts().add(product1);
         order.getProducts().add(product2);
 
+        session.save(product1);
+        session.save(product2);
+
+        session.getTransaction().commit();
+        
         // Omit session closure
     }
 }
