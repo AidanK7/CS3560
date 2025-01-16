@@ -16,4 +16,7 @@ public class Customer {
     @OneToOne(mappedBy = "customer")
     private Professor professor;
 
+    public Customer() {
+    
+    }
 }
