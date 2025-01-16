@@ -2,6 +2,7 @@ public class MainDelete {
 
     public static void main(String[] args) {
         // Omiting the session connection statements
+        session.beginTransaction();
 
         Customer customer = session.get(Customer.class, 1); 
 
@@ -14,6 +15,8 @@ public class MainDelete {
             session.delete(customer);
         }
 
+        session.getTransaction().commit();
+        
         // Omit the session closing statements
     }
 }
