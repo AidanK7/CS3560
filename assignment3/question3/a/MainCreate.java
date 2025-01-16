@@ -4,6 +4,8 @@ public class MainCreate {
       
         // Omitting the connection statements
 
+        session.beginTransaction();
+
         Customer customer = new Customer();
         customer.setName("John");
         customer.setAddress("390 Klug St");
@@ -13,6 +15,9 @@ public class MainCreate {
         professor.setResearchArea("OOP");
         professor.setCustomer(customer); 
 
-        // Omitting the session save and session closing statements
+        session.save(customer);
+			
+		session.getTransaction().commit();
+        // Omitting the session closing statements
     }
 }
